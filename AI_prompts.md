@@ -347,7 +347,7 @@ This file records the prompts used to complete each part of Homework 5: building
 
 > Okay, hi, Claude. Now, it's problem 10. Call it reflection. Open output/desk_tickets.html it's problem 10. Call it reflection. Open output slash desktickets.html. And fill the reflection tab. Answer in like my own words. So answer like how a human would write in plain e- English. But make sure that it's nice and detailed and thorough to explain everything. Explain it like how I write and, and talk and stuff like this in, in human language. This is what I want you to answer. How would you evaluate the performance of the agents on each ticket and why? For each ticket, how did the actual compare to the expected plan that you wrote earlier? What would have been simpler as one agent with tools and why? Describe three new problems campus customs might face that this agent team could solve with the tools you built. Describe three new problems campus customs might face that this agent team could not solve with the tools you built. And explain the tools and agents you would need to solve them. You don't need to build any new agents or tools, just explain what you could do if we wanted to. Make sure you tie all of your answers to this specific app that we just built and the three tickets that you ran. Use the ticket tabs and cache tab on the same page as your evidence. For grading purposes, generic AI essays without campus customs details will score low. So make sure that you are really specific to the app that we built, the types of tickets that are coming through, the specific performance of the agents on the specific tickets, um, the specific expected plan that we wrote, and then what actually happened. Um, these specific tools and like be talk about this kind of app that we built. Let me know when you're done. Do a good job. Thank you.
 
-## Problem 11: Push to GitHub
+## Problem 11: Submit to GitHub
 
 ### Prompt
 
@@ -358,3 +358,9 @@ This file records the prompts used to complete each part of Homework 5: building
 > okay can you put it here: https://github.com/alexq100/hw5.git
 
 **Why a follow-up was needed:** Claude Code's safety check stopped Claude from creating a public repo, so I made the public `hw5` repo on GitHub myself and asked Claude to push the project there.
+
+### Follow-up prompt
+
+> great! call the last part 11: submit to github
+
+**Why a follow-up was needed:** Claude had guessed the title for Problem 11, so I renamed it to the course's title, "Submit to GitHub".
