@@ -1,0 +1,158 @@
+{
+  "run_date": "2026-10-14",
+  "model": "gpt-6-luna",
+  "shop_date_today": "2026-08-31",
+  "database": "data/campus_customs_new.db, reset from data/campus_customs.db before the run",
+  "human_approver": "Alex Kew. Every approval and the manual close of ticket 103 were done by the person on the dashboard with their approver PIN. No AI approved anything.",
+  "cash": {
+    "starting_checking_balance": 3400.0,
+    "payments_in_order": [
+      {
+        "payment_id": 1,
+        "ticket_id": 101,
+        "approval_id": 1,
+        "kind": "invoice",
+        "ref_id": 501,
+        "amount": 840.0,
+        "approved_by": "Alex Kew",
+        "approved_at": "2026-10-14T23:35:13+00:00"
+      },
+      {
+        "payment_id": 2,
+        "ticket_id": 102,
+        "approval_id": 3,
+        "kind": "rent",
+        "ref_id": 1,
+        "amount": 2400.0,
+        "approved_by": "Alex Kew",
+        "approved_at": "2026-10-14T23:35:20+00:00"
+      },
+      {
+        "payment_id": 3,
+        "ticket_id": 101,
+        "approval_id": 2,
+        "kind": "purchase_order",
+        "ref_id": 1,
+        "amount": 8.0,
+        "approved_by": "Alex Kew",
+        "approved_at": "2026-10-14T23:35:25+00:00"
+      }
+    ],
+    "total_paid": 3248.0,
+    "ending_checking_balance": 152.0,
+    "check": "3400.00 - 3248.00 = 152.00; cash_accounts.checking = 152.00; match = True"
+  },
+  "tickets": [
+    {
+      "id": 101,
+      "subject": "Bulldog tee (customer order, Tauhid Zaman)",
+      "final_status": "resolved",
+      "run_id": "f369dcb4e9ed",
+      "outcome": "Size S tee was out of stock and the apparel vendor was on hold for overdue invoice 501. The agents queued the $840 invoice and an $8 one-tee purchase order. Alex approved both (the PO unlocks only after the invoice), the PO is ordered with earliest arrival 2026-09-05, and a customer draft waits on the board, unsent.",
+      "route": "boss -> inventory -> accounting -> customer_service",
+      "agents": {
+        "boss": "Got the ticket up front and sent one relay request to inventory with the full route; final call awaiting_approval.",
+        "inventory": "0 of size S on hand (short 1); picked Bulldog Print Co (apparel reprint, 5 lead days), on hold for invoice 501; handed the restock to accounting.",
+        "accounting": "Checked cash; queued approval #1 for invoice 501 ($840) and drafted PO 1 / approval #2 for one tee ($8); asked customer_service for the draft.",
+        "customer_service": "Saved draft #1 to Tauhid Zaman (size S being restocked; earliest arrival Sept 5). Not sent.",
+        "facilities": "Not needed."
+      },
+      "model_calls": 11,
+      "cash_change": -848.0,
+      "human_approvals": [
+        {
+          "approval_id": 1,
+          "kind": "invoice",
+          "ref_id": 501,
+          "amount": 840.0,
+          "requested_by": "accounting",
+          "decision": "approved",
+          "decided_by": "Alex Kew",
+          "decided_at": "2026-10-14T23:35:13+00:00",
+          "how": "Alex Kew on the dashboard with the approver PIN"
+        },
+        {
+          "approval_id": 2,
+          "kind": "purchase_order",
+          "ref_id": 1,
+          "amount": 8.0,
+          "requested_by": "accounting",
+          "decision": "approved",
+          "decided_by": "Alex Kew",
+          "decided_at": "2026-10-14T23:35:25+00:00",
+          "how": "Alex Kew on the dashboard with the approver PIN"
+        }
+      ],
+      "human_notes": [
+        {
+          "author": "Alex Kew",
+          "note": "All requests approved by Alex Kew. Ticket resolved.",
+          "created_at": "2026-10-14T23:35:25+00:00"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "subject": "Rent due (rent notice, Elm City Properties)",
+      "final_status": "resolved",
+      "run_id": "604f0d734a70",
+      "outcome": "Facilities confirmed lease 1: $2,400 due 2026-09-02, matching the email. Accounting queued the rent. Alex approved it, rent was paid, and the lease's next due date moved to 2026-10-02.",
+      "route": "boss -> facilities -> accounting",
+      "agents": {
+        "boss": "Sent one relay request to facilities; final call awaiting_approval.",
+        "facilities": "Looked up lease 1 (Chapel Street shop, Elm City Properties, $2,400 due 2026-09-02, 2 days away); handed it to accounting.",
+        "accounting": "Checked cash and queued approval #3 for $2,400 rent ($152 free after all pending requests).",
+        "inventory": "Not needed.",
+        "customer_service": "Not needed."
+      },
+      "model_calls": 8,
+      "cash_change": -2400.0,
+      "human_approvals": [
+        {
+          "approval_id": 3,
+          "kind": "rent",
+          "ref_id": 1,
+          "amount": 2400.0,
+          "requested_by": "accounting",
+          "decision": "approved",
+          "decided_by": "Alex Kew",
+          "decided_at": "2026-10-14T23:35:20+00:00",
+          "how": "Alex Kew on the dashboard with the approver PIN"
+        }
+      ],
+      "human_notes": [
+        {
+          "author": "Alex Kew",
+          "note": "All requests approved by Alex Kew. Ticket resolved.",
+          "created_at": "2026-10-14T23:35:20+00:00"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "subject": "Bulk hoodie discount (price override, Yale AI Club)",
+      "final_status": "resolved",
+      "run_id": "3767b68a0702",
+      "outcome": "8 of 20 size-M hoodies in stock (short 12). A routine 15% offer works ($49.30 each, $986 for 20, 55.4% margin), but restocking 12 costs $264 and only $152 was free after the pending invoice, PO and rent ($112 short), so no purchase order was queued. The boss escalated, and Alex reviewed it and marked it resolved. No cash moved.",
+      "route": "boss -> inventory -> accounting -> customer_service",
+      "agents": {
+        "boss": "Sent one relay request to inventory; escalated the $112 funding gap to a person.",
+        "inventory": "8 on hand, short 12; Bulldog Print Co, still on hold for invoice 501 at that moment (not yet approved), earliest arrival 2026-09-05 once released.",
+        "accounting": "Checked cash ($152 free), quoted 15% off ($49.30/unit, $986, 55.4% margin, within policy) and re-checked the vendor; did not queue the unfundable $264 restock; asked customer_service for a draft.",
+        "customer_service": "Saved draft #2 to the Yale AI Club with the 15% offer for 20, saying only 8 are in stock now and the rest is unconfirmed. Not sent.",
+        "facilities": "Not needed."
+      },
+      "model_calls": 10,
+      "cash_change": 0,
+      "human_approvals": [],
+      "human_notes": [
+        {
+          "author": "Alex Kew",
+          "note": "resolved",
+          "created_at": "2026-10-14T23:36:30+00:00"
+        }
+      ],
+      "id_check_note": "The boss listed approval #1 (ticket 101's invoice) among ticket 103's ids; the post-run id check flagged it as not belonging to ticket 103."
+    }
+  ]
+}

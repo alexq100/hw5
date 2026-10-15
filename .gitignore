@@ -1,0 +1,22 @@
+# Secrets: never commit the real key
+.env
+.env.*
+!.env.example
+
+# Local-only files
+.venv/
+__pycache__/
+*.pyc
+*.tmp
+.DS_Store
+.claude/
+frontend/node_modules/
+frontend/dist/
+
+# Human accounts (password hashes) and the old approver PIN hash stay on each person's machine
+data/accounts.db
+.approver.json
+
+# Local working files that aren't part of the submission
+output/archive/
+output/board_screenshots/
