@@ -364,3 +364,9 @@ This file records the prompts used to complete each part of Homework 5: building
 > great! call the last part 11: submit to github
 
 **Why a follow-up was needed:** Claude had guessed the title for Problem 11, so I renamed it to the course's title, "Submit to GitHub".
+
+### Follow-up prompt
+
+> okay great! so i should submit that link https://github.com/alexq100/hw5 to canvas? and everything is cool?
+
+**Why a follow-up was needed:** Before submitting on Canvas, I wanted Claude to confirm the GitHub link was the right one and that the repo had everything it needed.
