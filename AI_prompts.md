@@ -352,3 +352,9 @@ This file records the prompts used to complete each part of Homework 5: building
 ### Prompt
 
 > okay i need not to push it to a public github repository so the TAs can clone it. i will need to submit the repo URL to canvas, and also put it in outout/github_url.txt do NOT push the real .env to the github repo. do include both database files under data/ (the original and the working copy) so TAs can run the app easily. the README should explain copy the original DB to the working copy When you need a clean run, start MCP server, start fast API backend, start the React board, reset the DB before a full three-ticket run. Copy original DB to the working copy when you need a clean run. Start MCP server. Start fast API backend. Start the React board. Reset the DB before a full three ticket run.
+
+### Follow-up prompt
+
+> okay can you put it here: https://github.com/alexq100/hw5.git
+
+**Why a follow-up was needed:** Claude Code's safety check stopped Claude from creating a public repo, so I made the public `hw5` repo on GitHub myself and asked Claude to push the project there.
